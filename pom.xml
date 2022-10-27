@@ -6,7 +6,7 @@
 	<modelVersion>4.0.0</modelVersion>
 	<distributionManagement>
     <snapshotRepository>
-      <id>nexus-snapshots</id>
+      <id>deploymentRepo</id>
       <url>http://192.168.33.10:8081/repository/maven-snapshots/</url>
     </snapshotRepository>
     <repository>
