@@ -4,12 +4,6 @@
 	
 	
 	<modelVersion>4.0.0</modelVersion>
-<distributionManagement>
-		<repository>
-			<id>deploymentRepo</id>
-            <url>http://192.168.33.10:8081/repository/maven-releases/ </url>
-		</repository>
-	</distributionManagement>
 	<parent>
 		<groupId>org.springframework.boot</groupId>
 		<artifactId>spring-boot-starter-parent</artifactId>
@@ -84,6 +78,12 @@
                                <version>3.1.0</version>
                            </plugin>
 		</plugins>
+		
 	</build>
-
+<distributionManagement>
+		<repository>
+			<id>deploymentRepo</id>
+            <url>http://192.168.33.10:8081/repository/maven-releases/ </url>
+		</repository>
+	</distributionManagement>
 </project>
