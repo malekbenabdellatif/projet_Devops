@@ -48,6 +48,11 @@ public class Produit implements Serializable {
 	@JsonIgnore
 	private CategorieProduit categorieProduit;
 	
+	
+	public Produit(String string, String string2, float f, Date date, Date date2) {
+		
+	}
+	
 
 
 	
