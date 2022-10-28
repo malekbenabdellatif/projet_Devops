@@ -82,8 +82,7 @@
     <version>2.8.2</version>
     <configuration>
         <altDeploymentRepository>
-            deployRepo::default::file://http://192.168.33.10:8081
-        </altDeploymentRepository>
+http://192.168.33.10:8081/repository/deployRepo/        </altDeploymentRepository>
     </configuration>
 </plugin>
 		</plugins>
