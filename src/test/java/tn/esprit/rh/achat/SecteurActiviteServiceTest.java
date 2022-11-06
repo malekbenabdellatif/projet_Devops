@@ -24,7 +24,7 @@ import tn.esprit.rh.achat.entities.SecteurActivite;
 import tn.esprit.rh.achat.repositories.SecteurActiviteRepository;
 import tn.esprit.rh.achat.services.SecteurActiviteServiceImpl;
 
-
+@ActiveProfiles("test")
 @ExtendWith(MockitoExtension.class)
 public class SecteurActiviteServiceTest {
 
