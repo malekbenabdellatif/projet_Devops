@@ -9,8 +9,9 @@ pipeline {
         NEXUS_PROTOCOL = "http"
         NEXUS_URL = "192.168.33.10:8081"
         NEXUS_REPOSITORY = "deployRepo"
-        NEXUS_CREDENTIAL_ID = "nexus-user-credentials"
-    }
+        NEXUS_CREDENTIAL_ID = "nexus-user-credentials",
+        DOCKER_HUB = "dockerhub-user-credentials"
+            }
     
    stages{
     stage('GIT') { 
