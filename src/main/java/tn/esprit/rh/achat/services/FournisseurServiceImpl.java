@@ -81,6 +81,10 @@ public class FournisseurServiceImpl implements IFournisseurService {
 		
 		
 	}
+	@Override
+	public List<Fournisseur> getfournisseurbyCode(String code) {
+		return fournisseurRepository.findByCode(code);
+	}
 
 	
 
