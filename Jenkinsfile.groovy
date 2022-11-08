@@ -77,11 +77,7 @@ pipeline {
                     }
                 }
         }
-
-
         }
-}
-
            stage('Building our image') {
 
                 steps {
@@ -120,19 +116,8 @@ pipeline {
                     sh "docker rmi $registry:$BUILD_NUMBER"
 
             }
+
+        }
+
    }
-//   post {
-//         success {
-//              mail to: "wassimslim18@gmail.com",
-//                     subject: "Build sucess",
-//                     body: "sucess"
-//             echo 'successful'
-//         }
-//         failure {
-//              mail to: "wassimslim18@gmail.com",
-//                     subject: "Build failed",
-//                     body: "failed"
-//             echo 'failed'
-//         }
-//       }
 }
