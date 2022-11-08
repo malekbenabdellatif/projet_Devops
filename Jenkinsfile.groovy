@@ -77,6 +77,11 @@ pipeline {
                     }
                 }
         }
+
+
+        }
+}
+
            stage('Building our image') {
 
                 steps {
@@ -115,17 +120,6 @@ pipeline {
                     sh "docker rmi $registry:$BUILD_NUMBER"
 
             }
-
-        }
-}
-
-    // stage('docker-compose') {
-    //   steps {
-    //       sh "docker-compose build"
-    //       sh "docker-compose up -d"
-    //       }
-    //   }
-       
    }
 //   post {
 //         success {
