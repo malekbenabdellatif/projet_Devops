@@ -11,6 +11,8 @@ pipeline {
         NEXUS_REPOSITORY = "deployRepo"
         NEXUS_CREDENTIAL_ID = "nexus-user-credentials"
         DOCKER_HUB = "dockerhub-user-credentials"
+        dockerImage = ''
+        
             }
     
    stages{
