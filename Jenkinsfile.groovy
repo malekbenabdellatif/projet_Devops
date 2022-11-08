@@ -12,6 +12,7 @@ pipeline {
         NEXUS_CREDENTIAL_ID = "nexus-user-credentials"
         DOCKER_HUB = "dockerhub-user-credentials"
         dockerImage = ''
+        registry = "wassimslim/achat"
         
             }
     
