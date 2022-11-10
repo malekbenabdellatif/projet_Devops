@@ -31,7 +31,7 @@ public class SpringFoxSwaggerConfig {
 				.securityContexts(Collections.singletonList(securityContext()))
 				.securitySchemes(Arrays.asList(apiKey()))
 				.select()
-				.apis(RequestHandlerSelectors.basePackage("tn.esprit.rh.achat.controller"))
+				.apis(RequestHandlerSelectors.basePackage("tn.esprit.rh.achat.controllers"))
 				.paths(PathSelectors.any())
 				.build();
 	}
