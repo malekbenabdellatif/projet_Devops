@@ -38,7 +38,7 @@ pipeline {
         }
     stage("Runing Tests with Mockito") {
                steps{
-                   sh 'mvn test'
+                   sh ' '
                 }
         }
     stage("MVN SonarQube") {
