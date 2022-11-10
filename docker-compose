@@ -1,0 +1,26 @@
+version: '1.1'
+services:
+  mysql-standalone:
+    image: mysql:latest
+    container_name: mysql-standalone
+    environment:
+      - MYSQL_ROOT_PASSWORD=genadminpwd
+      - MYSQL_DATABASE=achatdb
+      - MYSQL_USER=root
+      - MYSQL_PASSWORD=
+    volumes:
+      - db:/var/lib/mysql
+  backend:
+    image: achat-1.1
+    container_name: achat-backend-container
+    ports:
+      - 8089:8089
+    volumes:
+      - .m2:/root/.m2
+    build: 
+      context: ./
+      dockerfile: Dockerfile
+    depends_on:
+      - mysql-standalone
+volumes:
+  db:
