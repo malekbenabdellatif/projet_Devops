@@ -21,7 +21,7 @@ pipeline {
         stage('Docker Compose UP') { 
         steps{
 
-                sh "docker-compose up -f /sonar-nexus/docker-compose.yml"
+                sh "docker-compose up -d --no-recreate -f /sonar-nexus/docker-compose.yml"
              }
     }
     stage('GIT') { 
