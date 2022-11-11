@@ -42,6 +42,13 @@ pipeline {
                    sh ' '
                 }
         }
+           stage('Docker Compose UP') { 
+        steps{
+
+                sh "docker-compose up -d -f /springApp-mysql/docker-compose.yml"
+             }
+    }
+
     stage("MVN SonarQube") {
         steps{
                 sh 'mvn sonar:sonar -Dsonar.login=admin -Dsonar.password=admin123 -DskipTests -X'
@@ -83,13 +90,7 @@ pipeline {
         }
         }
 
-        stage('Docker Compose UP') { 
-        steps{
-
-                sh "docker-compose up -d -f /springApp-mysql/docker-compose.yml"
-             }
-    }
-
+ 
            stage('Building our image') {
 
                 steps {
