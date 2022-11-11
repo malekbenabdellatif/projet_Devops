@@ -17,11 +17,7 @@ pipeline {
             }
     
    stages{
-           stage('Docker Compose UP') { 
-        steps{
-                sh "docker-compose -f /root/springApp-mysql/docker-compose.yml up"
-             }
-    }
+
     stage('GIT') { 
         steps{
         git url:'https://github.com/malekbenabdellatif/projet_Devops.git', branch : 'wassim-prod'
@@ -129,7 +125,11 @@ pipeline {
 
             }
             }
-
+           stage('Docker Compose UP') { 
+        steps{
+                sh "docker-compose -f /root/springApp-mysql/docker-compose.yml up"
+             }
+    }
 
         }
 
