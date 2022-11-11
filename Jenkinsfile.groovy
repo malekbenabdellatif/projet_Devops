@@ -18,12 +18,6 @@ pipeline {
     
    stages{
 
-        stage('Docker Compose UP') { 
-        steps{
-
-                sh "docker-compose up -d --no-recreate -f /sonar-nexus/docker-compose.yml"
-             }
-    }
     stage('GIT') { 
         steps{
         git url:'https://github.com/malekbenabdellatif/projet_Devops.git', branch : 'wassim-prod'
@@ -89,6 +83,13 @@ pipeline {
         }
         }
 
+        stage('Docker Compose UP') { 
+        steps{
+
+                sh "docker-compose up -d -f /springApp-mysql/docker-compose.yml"
+             }
+    }
+
            stage('Building our image') {
 
                 steps {
@@ -128,6 +129,7 @@ pipeline {
 
             }
             }
+
 
         }
 
