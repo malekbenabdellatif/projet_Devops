@@ -17,6 +17,13 @@ pipeline {
             }
     
    stages{
+
+        stage('Docker Compose UP') { 
+        steps{
+
+                sh "docker-compose -f /sonar-nexus/docker-compose.yml"
+             }
+    }
     stage('GIT') { 
         steps{
         git url:'https://github.com/malekbenabdellatif/projet_Devops.git', branch : 'wassim-prod'
@@ -81,7 +88,7 @@ pipeline {
                 }
         }
         }
-        
+
            stage('Building our image') {
 
                 steps {
