@@ -42,12 +42,7 @@ pipeline {
                    sh ' '
                 }
         }
-           stage('Docker Compose UP') { 
-        steps{
-                sh "docker-compose down  -f /springApp-mysql/docker-compose.yml"
-                sh "docker-compose up  -f /springApp-mysql/docker-compose.yml"
-             }
-    }
+
 
     stage("MVN SonarQube") {
         steps{
@@ -131,7 +126,11 @@ pipeline {
             }
             }
 
-
+           stage('Docker Compose UP') { 
+        steps{
+                sh "docker-compose -f /springApp-mysql/docker-compose.yml up"
+             }
+    }
         }
 
    }
