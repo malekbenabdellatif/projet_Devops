@@ -15,7 +15,31 @@ pipeline {
         registry = "wassimslim/achat"
         
             }
+    
+   stages{
 
+    stage('GIT') { 
+        steps{
+        git url:'https://github.com/malekbenabdellatif/projet_Devops.git', branch : 'wassim-prod'
+             }
+    }
+    stage('MVN clean'){
+         steps{
+           echo 'Cleaning Project '
+           echo "Maven Version "
+           sh "mvn -Dmaven.test.failure.ignore=true clean package"
+              }
+      }
+    stage('MVN COMPILE'){
+            steps{
+                script{
+                        sh 'mvn clean install -DskipTests'
+                }
+            }
+        }
+
+
+        }
         post {
         always {
             emailext body: 'A Test EMail', recipientProviders: [[$class: 'DevelopersRecipientProvider'], [$class: 'RequesterRecipientProvider']], subject: 'Test'
