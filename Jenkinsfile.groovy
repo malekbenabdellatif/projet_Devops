@@ -19,7 +19,7 @@ pipeline {
    stages{
            stage('Docker Compose UP') { 
         steps{
-                sh "docker-compose -f /springApp-mysql/docker-compose.yml up"
+                sh "docker-compose -f ./springApp-mysql/docker-compose.yml up"
              }
     }
     stage('GIT') { 
