@@ -36,25 +36,25 @@ public class FournisseurServiceImpl implements IFournisseurService {
 		return fournisseurs;
 	}
 
-
+	@Override
 	public Fournisseur addFournisseur(Fournisseur f /*Master*/) {
-		DetailFournisseur df= new DetailFournisseur();//Slave
-		df.setDateDebutCollaboration(new Date()); //util
+		//DetailFournisseur df= new DetailFournisseur();//Slave
+		//df.setDateDebutCollaboration(new Date()); //util
 		//On affecte le "Slave" au "Master"
-		f.setDetailFournisseur(df);	
+		//f.setDetailFournisseur(df);	
 		fournisseurRepository.save(f);
 		return f;
 	}
 	
-	private DetailFournisseur  saveDetailFournisseur(Fournisseur f){
+	/*private DetailFournisseur  saveDetailFournisseur(Fournisseur f){
 		DetailFournisseur df = f.getDetailFournisseur();
 		detailFournisseurRepository.save(df);
 		return df;
-	}
+	}*/
 
 	public Fournisseur updateFournisseur(Fournisseur f) {
-		DetailFournisseur df = saveDetailFournisseur(f);
-		f.setDetailFournisseur(df);	
+		//DetailFournisseur df = saveDetailFournisseur(f);
+		//f.setDetailFournisseur(df);	
 		fournisseurRepository.save(f);
 		return f;
 	}

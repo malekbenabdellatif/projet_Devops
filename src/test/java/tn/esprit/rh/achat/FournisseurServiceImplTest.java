@@ -82,7 +82,7 @@ public class FournisseurServiceImplTest {
 	public void testDeleteFournisseur(){
 		
 
-		fournrepo.deleteById(17L);
+		fournrepo.deleteById(19L);
 	}
 	
 	
