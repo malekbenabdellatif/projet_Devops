@@ -120,6 +120,10 @@ pipeline {
 
             }
 
+            stage('Mailing'){
+                
+            }
+
         }
 
    }
