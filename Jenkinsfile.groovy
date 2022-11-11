@@ -44,8 +44,8 @@ pipeline {
         }
            stage('Docker Compose UP') { 
         steps{
-
-                sh "docker-compose up -d -f /springApp-mysql/docker-compose.yml"
+                sh "docker-compose down  -f /springApp-mysql/docker-compose.yml"
+                sh "docker-compose up  -f /springApp-mysql/docker-compose.yml"
              }
     }
 
