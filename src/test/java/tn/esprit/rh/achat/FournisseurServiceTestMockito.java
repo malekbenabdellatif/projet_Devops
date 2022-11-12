@@ -46,39 +46,7 @@ public class FournisseurServiceTestMockito extends TestCase {
 	Fournisseur f2 = new Fournisseur((long)3,"testLibelle3","code3", null,null,null, null);
 	List<Fournisseur> fournisseur = new ArrayList<Fournisseur>() {{add(f);add(f1); add(f2);}}; 
 	
-	/*@Test
-	public void testGetAllStock() {
-		fourniservice.retrieveAllFournisseurs();
-		verify(fournisrepo).findAll();
-	}
 	
-	@Test
-	public void testGetStock() {
-		Mockito.when(fournisrepo.findById(Mockito.anyLong())).thenReturn(Optional.of(s1));
-		assertNotNull(fourniservice.retrieveFournisseur((long)3));	
-	}
-	
-	@Test
-	public void testaddStock() {
-		Mockito.when(fournisrepo.save(Mockito.any(Fournisseur.class))).thenReturn(s);
-		assertNotNull(fourniservice.addFournisseur(s));
-		//verify(stockRepository).save(s);
-	}
-	
-	
-	@Test
-	public void testUpdateStock() {
-		Mockito.when(fournisrepo.save(Mockito.any(Fournisseur.class))).thenReturn(s);
-		s.setLibelle("david");
-		assertNotNull(fourniservice.updateFournisseur(s));	
-		assertEquals("salim", s.getLibelle());
-	}
-	
-	@Test
-	public void testDeleteStock() {
-		fourniservice.deleteFournisseur((long)3);;
-		verify(fournisrepo).deleteById((long)3);;
-	}*/
 	
 	
 	
