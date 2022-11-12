@@ -130,18 +130,16 @@ pipeline {
                 sh "docker-compose -f /root/springApp-mysql/docker-compose.yml up -d"
              }
     }
-
         }
       post {
         always {
-            emailext body: """<p>Hello, <br>
-            Project '${env.PROJECT_NAME }' <br>
-            Please find job details below : <br>
-            Check console output at ${env.BUILD_URL }  to view the results.
-Note- Please do not reply to this email <br>
-            SUCCESSFUL: Job '${env.JOB_NAME} [${env.BUILD_NUMBER}]':</p>
-        <p>Check console output at &QUOT;<a href='${env.BUILD_URL}'>${env.JOB_NAME} [${env.BUILD_NUMBER}]</a>&QUOT;</p>""", recipientProviders: [[$class: 'DevelopersRecipientProvider'], [$class: 'RequesterRecipientProvider']], subject: "SUCCESSFUL: Job '${env.JOB_NAME} [${env.BUILD_NUMBER}]'"
-        }
+            
+	    emailext to: "naivetechblog@gmail.com",
+            subject: "jenkins build:${currentBuild.currentResult}: ${env.JOB_NAME}",
+            body: "${currentBuild.currentResult}: Job ${env.JOB_NAME}\nMore Info can be found here: ${env.BUILD_URL}"
+         }
+    }
+}}
     }
 
    }
