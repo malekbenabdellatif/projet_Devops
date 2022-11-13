@@ -19,9 +19,10 @@ import tn.esprit.rh.achat.AppProfile;
 import tn.esprit.rh.achat.entities.Produit;
 import tn.esprit.rh.achat.services.IProduitService;
 @RestController
-@CrossOrigin("*")
 @Api(tags = "Gestion des profiles")
 @RequestMapping("/profiles")
+@CrossOrigin("*")
+
 public class ProfileController {
 
 	@Autowired
