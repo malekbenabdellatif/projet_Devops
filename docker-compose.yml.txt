@@ -10,9 +10,7 @@ services:
       - MYSQL_PASSWORD=
     volumes:
       - db:/var/lib/mysql
-    ports:
-      - 3306:3306
-  backend:
+  sts:
     image: malekbenabdellatife/achat
     container_name: projectdevops
     ports:
