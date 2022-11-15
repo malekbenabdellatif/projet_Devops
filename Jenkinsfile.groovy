@@ -23,14 +23,14 @@ pipeline {
         git url:'https://github.com/malekbenabdellatif/projet_Devops.git', branch : 'wassim-prod'
              }
     }
-    stage('MVN clean'){
+    stage('MAVEN clean'){
          steps{
            echo 'Cleaning Project '
            echo "Maven Version "
            sh "mvn -Dmaven.test.failure.ignore=true clean package"
               }
       }
-    stage('MVN COMPILE'){
+    stage('MAVEN COMPILE'){
             steps{
                 script{
                         sh 'mvn clean install -DskipTests'
@@ -44,12 +44,12 @@ pipeline {
         }
 
 
-    stage("MVN SonarQube") {
+    stage("MAVEN SonarQube") {
         steps{
                 sh 'mvn sonar:sonar -Dsonar.login=admin -Dsonar.password=admin123 -DskipTests -X'
             }
         }
-    stage('Mvn Nexus'){
+    stage('MAVEN Nexus'){
         steps {
   script {
                     pom = readMavenPom file: "pom.xml";
@@ -125,7 +125,7 @@ pipeline {
 
             }
             }
-           stage('Docker Compose UP') { 
+           stage('Docker Compose UP SPRING BOOT & MYSQL') { 
         steps{
                 sh "docker-compose -f /root/springApp-mysql/docker-compose.yml up -d"
              }
