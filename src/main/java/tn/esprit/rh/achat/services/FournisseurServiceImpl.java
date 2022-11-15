@@ -13,6 +13,7 @@ import tn.esprit.rh.achat.repositories.SecteurActiviteRepository;
 
 import java.util.Date;
 import java.util.List;
+import java.util.Optional;
 
 @Service
 @Slf4j
@@ -82,7 +83,7 @@ public class FournisseurServiceImpl implements IFournisseurService {
 			}
 				SecteurActivite secteurActivite = new SecteurActivite();
 
-			Optional<Fournisseur> secteurActiviteOpt = secteurActiviteRepository.findById(idSecteurActivite);
+			Optional<SecteurActivite> secteurActiviteOpt = secteurActiviteRepository.findById(idSecteurActivite);
 			if(secteurActiviteOpt.isPresent()) {
 				secteurActivite = secteurActiviteOpt.get();
 			}
