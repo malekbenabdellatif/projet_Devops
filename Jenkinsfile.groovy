@@ -37,7 +37,7 @@ pipeline {
                 }
             }
         }
-    stage("Runing Tests with Mockito & JUNIT") {
+    stage("Runing Tests with Mockito & JUNIT TEST") {
                steps{
                    sh 'mvn test'
                 }
