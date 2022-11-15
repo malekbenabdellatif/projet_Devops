@@ -86,9 +86,9 @@ public class FactureServiceImpl implements IFactureService {
 			if(factureOpt.isPresent()) {
 				facture = factureOpt.get();
 			}
-		Operateur operateur = new Operateur();
 			Optional<Operateur> operateurOpt = operateurRepository.findById(idFacture);
 			if(operateurOpt.isPresent()) {
+				Operateur operateur = new Operateur();
 				operateur = operateurOpt.get();
 				operateur.getFactures().add(facture);
 				operateurRepository.save(operateur);
