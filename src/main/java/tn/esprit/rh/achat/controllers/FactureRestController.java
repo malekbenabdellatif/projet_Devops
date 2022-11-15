@@ -39,10 +39,6 @@ public class FactureRestController {
         return factureService.addFacture(f);
     }
 
-    /*
-     * une facture peut etre annulé si elle a été saisie par erreur Pour ce
-     * faire, il suffit de mettre le champs active à false
-     */
     @PutMapping("/cancel-facture/{facture-id}")
     @ResponseBody
     public void cancelFacture(@PathVariable("facture-id") Long factureId) {
