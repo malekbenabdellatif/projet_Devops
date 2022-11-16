@@ -9,8 +9,6 @@ services:
     MYSQL_ROOT_PASSWORD: 'chayma'
    ports:
     - '3306:3306'
-   volumes:
-    - db:/var/lib/mysql
  spring_app:
   image: chaymahamrouni/achat
   container_name: achat
@@ -19,5 +17,4 @@ services:
    - 8089:8089
   depends_on:
    - mysql_db
-  volumes:
-   - achat_cache:/sonar-nexus/achatapp-cache
+ 
