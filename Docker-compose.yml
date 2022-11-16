@@ -1,0 +1,21 @@
+ mysql_db:
+   image: mysql
+   container_name: db
+   restart: always
+   environment:
+    MYSQL_DATABASE: 'achatdb'
+    MYSQL_ROOT_PASSWORD: 'chayma'
+   ports:
+    - '3306:3306'
+   volumes:
+    - db:/var/lib/mysql
+ spring_app:
+  image: chaymahamrouni/achat
+  container_name: achat
+  restart: on-failure
+  ports:
+   - 8089:8089
+  depends_on:
+   - mysql_db
+  volumes:
+   - achat_cache:/sonar-nexus/achatapp-cache
