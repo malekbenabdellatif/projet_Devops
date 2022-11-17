@@ -6,24 +6,34 @@ import static org.mockito.Mockito.verify;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Optional;
+
+import org.junit.Before;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;
+import org.junit.runner.RunWith;
 import org.mockito.InjectMocks;
 import org.mockito.Mock;
 import org.mockito.Mockito;
+import org.mockito.MockitoAnnotations;
+import org.mockito.junit.MockitoJUnitRunner;
 import org.mockito.junit.jupiter.MockitoExtension;
 import tn.esprit.rh.achat.entities.Operateur;
 import tn.esprit.rh.achat.repositories.OperateurRepository;
 import tn.esprit.rh.achat.services.OperateurServiceImpl;
 
 
-@ExtendWith(MockitoExtension.class)
+//@ExtendWith(MockitoExtension.class)
+@RunWith(MockitoJUnitRunner.class)
 public class OperateurMockTest {
 	@Mock
 	OperateurRepository operateurRepository;
 
     @InjectMocks
     OperateurServiceImpl operateurServiceImpl;
+    @Before
+    public void setup(){
+        MockitoAnnotations.initMocks(this); //without this you will get NPE
+    }
 	
     Operateur o = new Operateur((long)1,"nom","prenom","password");
     Operateur o1 = new Operateur((long)2,"nom","prenom","password");
