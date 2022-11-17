@@ -18,7 +18,7 @@ import tn.esprit.rh.achat.services.OperateurServiceImpl;
 
 
 @ExtendWith(MockitoExtension.class)
-public class testoperateur {
+public class OperateurMockTest {
 	@Mock
 	OperateurRepository operateurRepository;
 
