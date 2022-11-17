@@ -7,7 +7,7 @@ pipeline {
         environment {
         NEXUS_VERSION = "nexus3"
         NEXUS_PROTOCOL = "http"
-        NEXUS_URL = "192.168.1.24:8081"
+        NEXUS_URL = "192.168.33.10:8081"
         NEXUS_REPOSITORY = "deployRepo"
         NEXUS_CREDENTIAL_ID = "nexus-user-credentials"
         DOCKER_HUB = "dockerhub-user-credentials"
