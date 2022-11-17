@@ -1,40 +1,39 @@
-
 package tn.esprit.rh.achat;
-import static org.junit.jupiter.api.Assertions.assertEquals;
-import static org.junit.jupiter.api.Assertions.assertNotNull;
-import static org.mockito.Mockito.verify;
-import java.util.ArrayList;
-import java.util.List;
-import java.util.Optional;
 
 import org.junit.Before;
-import org.junit.jupiter.api.Test;
-import org.junit.jupiter.api.extension.ExtendWith;
+import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.mockito.InjectMocks;
 import org.mockito.Mock;
 import org.mockito.Mockito;
 import org.mockito.MockitoAnnotations;
 import org.mockito.junit.MockitoJUnitRunner;
-import org.mockito.junit.jupiter.MockitoExtension;
 import tn.esprit.rh.achat.entities.Operateur;
 import tn.esprit.rh.achat.repositories.OperateurRepository;
 import tn.esprit.rh.achat.services.OperateurServiceImpl;
 
+import java.util.ArrayList;
+import java.util.List;
+import java.util.Optional;
 
-//@ExtendWith(MockitoExtension.class)
+import static org.junit.Assert.*;
+import static org.mockito.Mockito.verify;
+
+
 @RunWith(MockitoJUnitRunner.class)
-public class OperateurMockTest {
-	@Mock
-	OperateurRepository operateurRepository;
+public class OperateurServiceMockTest {
 
     @InjectMocks
-    OperateurServiceImpl operateurServiceImpl;
-   /* @Before
+    OperateurServiceImpl operateurService;
+    
+    @Before
     public void setup(){
         MockitoAnnotations.initMocks(this); //without this you will get NPE
-    }*/
-	
+    }
+
+    @Mock
+    OperateurRepository operateurRepository;
+
     Operateur o = new Operateur((long)1,"nom","prenom","password");
     Operateur o1 = new Operateur((long)2,"nom","prenom","password");
 	Operateur o2 = new Operateur((long)3,"nom","prenom","password");
@@ -44,23 +43,19 @@ public class OperateurMockTest {
 		private static final long serialVersionUID = 1L;
 
 	{add(o1); add(o2);}}; 
-	
-	@Test
-	public void testGetAllOperateur() {
-		operateurServiceImpl.retrieveAllOperateurs();
-		verify(operateurRepository).findAll();
-	}
-	
+
+    
+
 	@Test
 	public void testGetOperateur() {
 		Mockito.when(operateurRepository.findById(Mockito.anyLong())).thenReturn(Optional.of(o));
-		assertNotNull(operateurServiceImpl.retrieveOperateur((long)3));	
+		assertNotNull(operateurService.retrieveOperateur((long)3));	
 	}
 	
 	@Test
 	public void testaddOperateur() {
 		Mockito.when(operateurRepository.save(Mockito.any(Operateur.class))).thenReturn(o);
-		assertNotNull(operateurServiceImpl.addOperateur(o));
+		assertNotNull(operateurService.addOperateur(o));
 		//verify(stockRepository).save(s);
 	}
 	
@@ -70,25 +65,15 @@ public class OperateurMockTest {
 
 		Mockito.when(operateurRepository.save(Mockito.any(Operateur.class))).thenReturn(o);
 		o.setNom("Updated Libelle");
-		assertNotNull(operateurServiceImpl.updateOperateur(o));	
+		assertNotNull(operateurService.updateOperateur(o));	
 		assertEquals("Updated Libelle", o.getNom());
 	}
 	
 	
 	@Test
 	public void testDeleteOperateur() {
-		operateurServiceImpl.deleteOperateur((long)3);
+		operateurService.deleteOperateur((long)3);
 		verify(operateurRepository).deleteById((long)3);
 	}
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
 }
-
+	
