@@ -38,13 +38,11 @@ public class FournisseurServiceImplTest {
 
 		Fournisseur f = new Fournisseur();
 		f.setLibelle("test");
-		//f.setCategorieFournisseur();;
 		f.setCode("G456");
 		fournserv.addFournisseur(f);
 		
 		Fournisseur f1 = new Fournisseur();
 		f.setLibelle("FourY");
-		//f.setCategorieFournisseur();;
 		f.setCode("G90A");
 		fournserv.addFournisseur(f1);
 		
@@ -77,8 +75,6 @@ public class FournisseurServiceImplTest {
 	
 	@Test
 	public void testDeleteFournisseur(){
-		
-
 		fournrepo.deleteById(19L);
 	}
 	
