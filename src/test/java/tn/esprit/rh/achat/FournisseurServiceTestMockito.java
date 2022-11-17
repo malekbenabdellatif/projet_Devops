@@ -44,7 +44,7 @@ public class FournisseurServiceTestMockito extends TestCase {
 	Fournisseur f = new Fournisseur((long)1,"testLibelle1","code1", null,null,null, null);
 	Fournisseur f1 = new Fournisseur((long)2,"testLibelle2","code2", null,null,null, null);
 	Fournisseur f2 = new Fournisseur((long)3,"testLibelle3","code3", null,null,null, null);
-	List<Fournisseur> fournisseur = new ArrayList<Fournisseur>() {{add(f);add(f1); add(f2);}}; 
+	//List<Fournisseur> fournisseur = new ArrayList<Fournisseur>() {{add(f);add(f1); add(f2);}}; 
 	
 	
 	
