@@ -30,10 +30,10 @@ public class OperateurMockTest {
 
     @InjectMocks
     OperateurServiceImpl operateurServiceImpl;
-    @Before
+   /* @Before
     public void setup(){
         MockitoAnnotations.initMocks(this); //without this you will get NPE
-    }
+    }*/
 	
     Operateur o = new Operateur((long)1,"nom","prenom","password");
     Operateur o1 = new Operateur((long)2,"nom","prenom","password");
