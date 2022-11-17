@@ -26,7 +26,6 @@ public class FournisseurServiceImplTest {
 		
 		Fournisseur f = new Fournisseur();
 		f.setLibelle("test");
-		//f.setCategorieFournisseur();;
 		f.setCode("G456");
 		Fournisseur savedFournisseur= fournserv.addFournisseur(f);
 		assertNotNull(savedFournisseur);
@@ -35,8 +34,6 @@ public class FournisseurServiceImplTest {
 	
 	@Test
 	public void testALLFournisseurs(){
-		/*Fournisseur f =new Fournisseur("G456","FournisseurX");
-		fournrepo.save(f);*/
 		
 
 		Fournisseur f = new Fournisseur();
