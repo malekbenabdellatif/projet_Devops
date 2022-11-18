@@ -13,7 +13,7 @@ pipeline {
         DOCKER_HUB = "dockerhub-user-credentials"
         dockerImage = ''
         registry = "wassimslim/achat"
-        
+        DOCKER_CREDS_USR = "wassimslim"
             }
     
    stages{
@@ -125,12 +125,15 @@ pipeline {
 
             }
             }
+
+  
            stage('Docker Compose UP SPRING BOOT & MYSQL & Angular') { 
         steps{
-                sh "docker-compose -f /root/springApp-mysql/docker-compose.yml up -d"
+                sh "docker-compose up -d"
              }
     }
-        }
+   }
+        
       post {
         always {
             
