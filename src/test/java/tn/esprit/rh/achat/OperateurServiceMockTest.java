@@ -56,7 +56,7 @@ public class OperateurServiceMockTest {
 	public void testaddOperateur() {
 		Mockito.when(operateurRepository.save(Mockito.any(Operateur.class))).thenReturn(o);
 		assertNotNull(operateurService.addOperateur(o));
-		//verify(stockRepository).save(s);
+		
 	}
 	
 	@Test
