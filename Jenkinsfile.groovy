@@ -126,10 +126,10 @@ pipeline {
 
             }
             }
-           stage('Docker Compose UP SPRING BOOT & MYSQL') { 
-        steps{
-                sh "docker-compose -f /root/springApp-mysql/docker-compose.yml up -d"
-             }
+           stage('Docker Compose UP SPRING BOOT & MYSQL & Angular') { 
+        // steps{
+        //         sh "docker-compose -f /root/springApp-mysql/docker-compose.yml up -d"
+        //      }
     }
         }
         
