@@ -24,7 +24,7 @@ pipeline {
   
            stage('Docker Compose UP SPRING BOOT & MYSQL & Angular') { 
         steps{
-                sh "sudo docker-compose -f ./root/springApp-mysql/docker-compose.yml up -d"
+                sh "docker-compose -f ./root/springApp-mysql/docker-compose.yml up -d"
              }
     }
    }
